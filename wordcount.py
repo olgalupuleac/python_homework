@@ -37,22 +37,29 @@ def read_words(filename):
         for line in f:
             words.extend(line.split())
     return words
+
+
 def count_words(filename):
     d={}
-    for i in read_words(filename) :
+    for j in read_words(filename) :
+        i=j.lower()
         if i in d:
             d[i]=d[i]+1
         else:
             d2={i:1}
             d.update(d2)
-    return(d)
+    return d
+
+
 def print_words(filename):
     dct=count_words(filename)
     l1=sorted(dct.keys())
     for x in l1:
-       print(x,' ',d[x])
+       print(x,' ',dct[x])
+
+       
 def print_top(filename):
-    dct=count_words(filename)
+    d=count_words(filename)
     l2=[]
     j=0
     while j<20:

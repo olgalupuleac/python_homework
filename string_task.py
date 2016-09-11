@@ -14,7 +14,7 @@ def verbing(s):
         else:
             return(s+'ly')
     else:
-        return(s)
+        return s
  
  
 # Given a string, find the first appearance of the
@@ -28,10 +28,10 @@ def verbing(s):
 def not_bad(s):
     i=s.find('not')
     j=s.find('bad')
-    if i<j:
+    if (i<j) and not(i==-1):
         return(s[:i]+'good'+s[j+3:])
     else:
-        return(s)
+            return s
  
  
 # Consider dividing a string into two halves.
