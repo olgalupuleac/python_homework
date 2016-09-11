@@ -10,8 +10,8 @@
 def verbing(s):
     if len(s)>=3:
         if s[-3:]!='ing':
-            return(s+'ing')
-        return(s+'ly')
+            return s+'ing'
+        return s+'ly'
     return s
  
  
@@ -43,7 +43,7 @@ def not_bad(s):
 def front_back(a, b):
     x=(len(a)+1)//2
     y=(len(b)+1)//2
-    return(a[:x]+b[:y]+a[x:]+b[y:])
+    return a[:x]+b[:y]+a[x:]+b[y:]
 
 
 print(verbing('read'))
