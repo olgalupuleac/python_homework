@@ -11,10 +11,8 @@ def verbing(s):
     if len(s)>=3:
         if s[-3:]!='ing':
             return(s+'ing')
-        else:
-            return(s+'ly')
-    else:
-        return s
+        return(s+'ly')
+    return s
  
  
 # Given a string, find the first appearance of the
@@ -28,11 +26,9 @@ def verbing(s):
 def not_bad(s):
     i=s.find('not')
     j=s.find('bad')
-    if (i<j) and not(i==-1):
-        return(s[:i]+'good'+s[j+3:])
-    else:
-            return s
- 
+    if (i<j) and (i!=-1):
+        return s[:i]+'good'+s[j+3:]
+    return s
  
 # Consider dividing a string into two halves.
 # If the length is even, the front and back halves are the same length.
@@ -48,6 +44,8 @@ def front_back(a, b):
     x=(len(a)+1)//2
     y=(len(b)+1)//2
     return(a[:x]+b[:y]+a[x:]+b[y:])
+
+
 print(verbing('read'))
-print(not_bad('This dinner is not that bad!'))
+print(not_bad('This dinner is not bad!'))
 print(front_back('abcd', 'xy'))

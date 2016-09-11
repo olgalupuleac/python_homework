@@ -43,11 +43,7 @@ def count_words(filename):
     d={}
     for j in read_words(filename) :
         i=j.lower()
-        if i in d:
-            d[i]=d[i]+1
-        else:
-            d2={i:1}
-            d.update(d2)
+        d[i]=d.get(i,0)+1
     return d
 
 
@@ -55,25 +51,14 @@ def print_words(filename):
     dct=count_words(filename)
     l1=sorted(dct.keys())
     for x in l1:
-       print(x,' ',dct[x])
+        print(x,' ',dct[x])
 
+       
        
 def print_top(filename):
     d=count_words(filename)
-    l2=[]
-    j=0
-    while j<20:
-        s=0
-        for i in d:
-            if  (i not in l2) and (d[i]>s):
-                s=d[i]
-                k=i
-        if k not in l2:
-             l2.append(k)
-        j=j+1        
-    for i in l2:
-        print(i)
-
+    l=sorted(d, key=d.get, reverse=True)
+    print(l[:20])
 
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
