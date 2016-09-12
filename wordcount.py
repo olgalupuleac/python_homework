@@ -49,8 +49,7 @@ def count_words(filename):
 
 def print_words(filename):
     dct=count_words(filename)
-    l1=sorted(dct.keys())
-    for x in l1:
+    for x in sorted(dct.keys()):
         print(x,' ',dct[x])
 
        
@@ -58,7 +57,7 @@ def print_words(filename):
 def print_top(filename):
     d=count_words(filename)
     l=sorted(d, key=d.get)
-    for i in l[:len(l)-20:-1]:
+    for i in l[:-21:-1]:
         print(i)
    
 # Define print_words(filename) and print_top(filename) functions.
