@@ -49,8 +49,8 @@ def count_words(filename):
 
 def print_words(filename):
     dct=count_words(filename)
-    for x in sorted(dct.keys()):
-        print(x,' ',dct[x])
+    for x in sorted(dct.items()):
+        print(x)
 
        
        

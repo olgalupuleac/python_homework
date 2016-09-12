@@ -9,8 +9,7 @@ def remove_adjacent(lst):
             if lst[i]!=lst[i-1]:
                 res.append(lst[i])
         return res
-    res=[]
-    return res
+    return r[]
  
 # Merge two sorted lists in one sorted list in linear time
 #
