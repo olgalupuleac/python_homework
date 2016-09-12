@@ -57,9 +57,10 @@ def print_words(filename):
        
 def print_top(filename):
     d=count_words(filename)
-    l=sorted(d, key=d.get, reverse=True)
-    print(l[:20])
-
+    l=sorted(d, key=d.get)
+    for i in l[:len(l)-20:-1]:
+        print(i)
+   
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
